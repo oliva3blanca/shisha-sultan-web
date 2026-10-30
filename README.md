@@ -2,6 +2,8 @@
 
 Web de **Shisha Sultán**, gastrobar y lounge de cachimbas en Canarias.
 
+**Web publicada:** https://oliva3blanca.github.io/shisha-sultan-web/
+
 ## Contenido
 
 | Ruta | Qué es |
