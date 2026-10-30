@@ -1,0 +1,231 @@
+{
+  "shishas": {
+    "precio": "18",
+    "suplemento": { "nombre": "Cambio de cazoleta con carbón", "precio": "8" },
+    "familias": [
+      {
+        "nombre": "Clásicas",
+        "sabores": [
+          { "nombre": "Doble manzana", "notas": "" },
+          { "nombre": "Menta", "notas": "" },
+          { "nombre": "Black Nana", "notas": "Uva y menta" }
+        ]
+      },
+      {
+        "nombre": "Afrutadas",
+        "sabores": [
+          { "nombre": "Love 66", "notas": "Maracuyá, fruta de la pasión, menta y sandía" },
+          { "nombre": "Lady Killer", "notas": "Melocotón, menta, mango y hielo" },
+          { "nombre": "La Bonita", "notas": "Uva, fresa, maracuyá, manzana y cereza" },
+          { "nombre": "Mango Tango", "notas": "Mango y maracuyá" },
+          { "nombre": "Tokio", "notas": "Melocotón, lima, jazmín y menta" },
+          { "nombre": "Carnival", "notas": "Mezcla de frutas exóticas" }
+        ]
+      },
+      {
+        "nombre": "Cítricas",
+        "sabores": [
+          { "nombre": "Skyfall", "notas": "Melocotón, sandía, lima, limón y hielo" },
+          { "nombre": "Eskimo León", "notas": "Kiwi, limón, lima y frescor de menta" },
+          { "nombre": "Three Angels", "notas": "Cáscara de lima y limón, con frescor" }
+        ]
+      }
+    ]
+  },
+  "carta": [
+    {
+      "id": "comer",
+      "nombre": "Para comer",
+      "grupos": [
+        {
+          "nombre": "Picoteo",
+          "items": [
+            ["Tequeños", "8"],
+            ["Queso camembert", "8"],
+            ["Croquetas de pollo", "8"],
+            ["Pelotas de pollo con queso a la mostaza", "8"],
+            ["Nachos con guacamole", "8"],
+            ["Tiras de pollo con salsa de mostaza y miel", "9"],
+            ["Papas locas", "9", "Queso, carne mechada, pollo y las tres salsas"],
+            ["Papas sultán", "9", "Queso, kebab de pollo y salsa de yogur"],
+            ["Alitas de pollo con salsa barbacoa", "9"],
+            ["Calamares a la romana", "14"],
+            ["Hamburguesa de vacuno", "8"],
+            ["Hamburguesa de angus", "14"],
+            ["Hamburguesa de pollo", "8"],
+            ["Ensalada de queso de cabra", "9", "Lechuga, tomate cherry, frutos secos, rulo de cabra y miel de palma"],
+            ["Ensalada sultán", "9,75", "Lechuga, tomate cherry, pepino, pollo empanado, picatostes y salsa de mango"]
+          ]
+        },
+        {
+          "nombre": "Postres",
+          "items": [
+            ["Gofre Zebra", "4,75", "Nutella, nata y sirope de chocolate"],
+            ["Gofre Sultán", "6", "Nutella, plátano o fresa, nata y Kinder Bueno"],
+            ["Quesillo de la casa", "5"],
+            ["Tarta de queso", "5"],
+            ["Baklava de pistacho", "3"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cocteles",
+      "nombre": "Cócteles",
+      "grupos": [
+        {
+          "nombre": "Con alcohol",
+          "items": [
+            ["Cóctel Sultán", "10"],
+            ["Mojito clásico", "7"],
+            ["Mojito de sabores", "7", "Fresa, mango, maracuyá, melón, sandía o coco"],
+            ["Mojito vodka negro", "8"],
+            ["Mojito amaretto", "8"],
+            ["Mojito Plata o Plomo", "8"],
+            ["Mojito Jäger", "8"],
+            ["Daiquiri", "8", "Fresa, mango, maracuyá o plátano"],
+            ["Daiquiri de manzana verde", "9"],
+            ["Daiquiri de tequila, chocolate y helado de vainilla", "9"],
+            ["Daiquiri tropical", "9", "Plátano, mango, maracuyá y fresa"],
+            ["Sex on the Beach", "8"],
+            ["Piña colada", "8"],
+            ["Caipiriña", "8", "Fresa, mango o maracuyá"],
+            ["Caipiroska", "8", "Fresa, mango o maracuyá"],
+            ["Margarita", "8", "Fresa, mango o maracuyá"],
+            ["Tequila sunrise", "8"],
+            ["Negroni", "8", "Ginebra, Campari y vermut"]
+          ]
+        },
+        {
+          "nombre": "Sin alcohol",
+          "items": [
+            ["Cóctel Sultán", "10"],
+            ["Mojito clásico", "6"],
+            ["Mojito de sabores", "7", "Fresa, mango o maracuyá"],
+            ["San Francisco", "7"],
+            ["Piña colada", "7"],
+            ["Daiquiri", "7", "Fresa, mango o maracuyá"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "te",
+      "nombre": "Té y café",
+      "grupos": [
+        {
+          "nombre": "Tés",
+          "nota": "Pequeño 3 € · grande 6 €",
+          "items": [
+            ["Té rojo"], ["Té rojo Himalaya"], ["Té rojo almendra y manzana"], ["Té rojo cuerpos del deseo"],
+            ["Té negro"], ["Té negro paquistaní"], ["Té negro con clavo y especias"], ["Té embrujo del sultán"],
+            ["Té verde atardecer en Marrakech"], ["Té verde con hierbabuena y jazmín"],
+            ["Rooibos naranja"], ["Rooibos mango y maracuyá"], ["Rooibos piña colada"]
+          ]
+        },
+        {
+          "nombre": "Infusiones",
+          "nota": "Pequeña 3 € · grande 6 €",
+          "items": [["Menta poleo"], ["Manzanilla"], ["Tila"]]
+        },
+        {
+          "nombre": "Café",
+          "items": [["Espresso", "1,50"], ["Cortado", "2"], ["Barraquito", "2,50"]]
+        },
+        {
+          "nombre": "Batidos y zumos",
+          "items": [
+            ["Batido de fresa", "4"], ["Batido de plátano", "4"], ["Zumo multifruta", "4,50"],
+            ["Zumo de naranja", "4"], ["Zumo de fresa", "4"]
+          ]
+        },
+        {
+          "nombre": "Refrescos",
+          "items": [
+            ["Refrescos", "2,50"], ["Agua", "1,80"], ["Agua con gas", "2,50"],
+            ["Red Bull", "3"], ["Monster", "3,70"], ["Tónica premium", "3"]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cervezas",
+      "nombre": "Cervezas y vino",
+      "grupos": [
+        {
+          "nombre": "Cervezas",
+          "items": [
+            ["Caña Alhambra Especial", "2"], ["Jarra Alhambra Especial", "4"], ["Estrella, botella", "2,90"],
+            ["Heineken", "2,20"], ["Budweiser", "3,20"], ["Tropical de limón", "2,90"], ["Dorada Pilsen", "2,60"],
+            ["Dorada Especial", "3,10"], ["Dorada sin limón", "2,90"], ["1906", "3,30"], ["1906 Red", "3,30"],
+            ["1906 Black", "3,30"], ["Corona", "3,50"], ["Franziskaner", "5,95"], ["Paulaner", "5,95"],
+            ["Alhambra 1925", "3,30"], ["Mahou 0,0 Tostada", "2,90"], ["Mahou Reserva", "3,30"],
+            ["Ladrón de Manzanas", "3"], ["Kopparberg", "3,90"], ["Salitos", "3,80"], ["Cerveza artesanal Agüita", "6"]
+          ]
+        },
+        {
+          "nombre": "Vino por copas",
+          "items": [["Blanco", "4"], ["Tinto", "4"], ["Afrutado", "4"]]
+        },
+        {
+          "nombre": "Vino por botellas",
+          "items": [["Finca Resalso", "18"], ["Brumas de Ayosa", "18"], ["Cune", "18"], ["Ramón Bilbao", "18"]]
+        }
+      ]
+    },
+    {
+      "id": "destilados",
+      "nombre": "Destilados",
+      "grupos": [
+        {
+          "nombre": "Ginebra",
+          "items": [
+            ["Gordon's", "8"], ["Beefeater", "8"], ["Seagram's", "8"], ["Larios", "8"], ["Larios fresa", "8"],
+            ["Puerto de Indias", "8"], ["Carmela", "8"], ["Tanqueray", "8"], ["Tanqueray Sevilla", "8"],
+            ["Master's", "8"], ["Bombay Sapphire", "8"], ["Nordés", "9"], ["Bulldog", "9"], ["Hendrick's", "10"],
+            ["Brockmans", "10"], ["Martin Miller's", "12"], ["G'Vine", "12"], ["Gin Mare", "12"]
+          ]
+        },
+        {
+          "nombre": "Ron",
+          "items": [
+            ["Aldea blanco", "8"], ["Arehucas Oro", "8"], ["Arehucas Blanco", "8"], ["Arehucas fresa", "9"],
+            ["Arehucas 12 Selección", "12"], ["Guajiro", "8"], ["Bacardí Blanco", "8"], ["Legendario", "8"],
+            ["Matusalem", "8"], ["Havana Club 7 años", "8"], ["Brugal", "8"], ["Barceló", "8"], ["Cacique", "8"],
+            ["Cacique 500", "9"], ["Flor de Caña 5 años", "8"], ["Flor de Caña 7 años", "8"],
+            ["Flor de Caña 12 años", "12"], ["Santa Teresa", "8"], ["Diplomático", "9"],
+            ["Diplomático Reserva", "12"], ["Zacapa 23", "14"]
+          ]
+        },
+        {
+          "nombre": "Whisky",
+          "items": [
+            ["Cardhu", "9"], ["Chivas", "9"], ["Jack Daniel's", "9"], ["Red Label", "8"], ["Black Label", "9"],
+            ["100 Pipers", "8"], ["Ballantine's", "8"], ["J&B", "8"], ["White Label", "8"], ["Old Parr 12 años", "9"],
+            ["Jameson", "8"], ["Jim Beam", "9"], ["Buchanan's 12 años", "9"], ["Glenfiddich 12 años", "9"]
+          ]
+        },
+        {
+          "nombre": "Vodka",
+          "items": [
+            ["Moskovskaya", "8"], ["Absolut", "8"], ["Smirnoff", "8"], ["Vodka negro", "8"],
+            ["Grey Goose", "12"], ["Cîroc", "12"], ["Belvedere", "12"]
+          ]
+        },
+        {
+          "nombre": "Licores",
+          "items": [
+            ["Tía María", "6"], ["Baileys", "6"], ["Jägermeister", "6"], ["Tequila fresa", "6"], ["Tequila mango", "6"],
+            ["Vodka pomelo", "6"], ["Ron caramelo", "6"], ["Frangelico", "6"], ["Martini Bianco", "6"],
+            ["Martini Rosso", "6"], ["Amaretto", "6"], ["Limoncello", "6"], ["Crema de orujo", "6"],
+            ["Orujo de hierbas", "6"], ["Amaretto con Red Bull", "8"], ["Malibú", "8"]
+          ]
+        },
+        {
+          "nombre": "Chupitos",
+          "items": [["Normales", "3"], ["Premium", "4"], ["Reserva", "9"]]
+        }
+      ]
+    }
+  ]
+}
