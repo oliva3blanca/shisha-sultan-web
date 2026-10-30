@@ -91,7 +91,7 @@ Colores medidos en los archivos del logo.
 
 | Combinación | Contraste |
 | --- | --- |
-| Marfil sobre negro | 17:1 |
+| Marfil sobre negro | 15,7:1 |
 | Oro claro sobre negro | 10,8:1 |
 | Negro sobre oro | 8,9:1 |
 | Tabaco sobre oro | ≈ 6,2:1 |
