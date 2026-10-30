@@ -97,10 +97,9 @@
       </div>
 
       <div class="ficha" aria-live="polite" data-ficha>
-        <p class="ficha__familia" data-ficha-familia>Afrutadas</p>
         <p class="ficha__nombre" data-ficha-nombre>Love 66</p>
         <p class="ficha__notas" data-ficha-notas>Maracuyá, fruta de la pasión, menta y sandía</p>
-        <p class="ficha__precio"><span>18&nbsp;€</span> la shisha · cambio de cazoleta con carbón, 8&nbsp;€</p>
+        <p class="ficha__precio"><span data-ficha-familia>Afrutada</span> · <b>18&nbsp;€</b> la shisha · cambio de cazoleta con carbón, 8&nbsp;€</p>
         <a class="boton boton--negro" href="#reservas" data-ficha-reservar>Reservar con esta shisha</a>
       </div>
 
@@ -151,8 +150,10 @@
 
   <!-- Galería: un marco fijo cuyo contenido cambia -->
   <section class="galeria" id="galeria" aria-labelledby="t-galeria">
-    <h2 id="t-galeria" class="titulo">Galería</h2>
-    <p class="entradilla">Los salones otomanos que inspiran la casa: azulejos de Iznik, techos dorados y divanes.</p>
+    <div class="galeria__texto">
+      <h2 id="t-galeria" class="titulo">Galería</h2>
+      <p class="entradilla">Los salones otomanos que inspiran la casa: azulejos de Iznik, techos dorados y divanes.</p>
+    </div>
     <figure class="marco" data-marco>
       <button class="marco__boton" type="button" data-marco-siguiente aria-label="Ver la siguiente imagen de la galería">
         <img class="activa" src="assets/topkapi-palace-istanbul-turkey.jpg" alt="Techo dorado de una sala del harén del palacio de Topkapı" width="1600" height="1200" loading="lazy" decoding="async" data-pie="Techo de una sala del harén, Topkapı">
@@ -167,9 +168,9 @@
 
   <!-- Dónde y cuándo -->
   <section class="abrimos" id="abrimos" aria-labelledby="t-abrimos">
-    <h2 id="t-abrimos" class="titulo">Abrimos pronto en Canarias</h2>
+    <h2 id="t-abrimos" class="titulo">Abrimos pronto</h2>
     <dl class="datos">
-      <div><dt>Dónde</dt><dd data-local="direccion">Canarias. La dirección, muy pronto.</dd></div>
+      <div><dt>Dónde</dt><dd data-local="direccion">Canarias. Dirección, muy pronto</dd></div>
       <div><dt>Horario</dt><dd data-local="horario">Por confirmar</dd></div>
       <div><dt>Shisha</dt><dd>18&nbsp;€ · cambio de cazoleta, 8&nbsp;€</dd></div>
       <div><dt>Consumición mínima</dt><dd data-local="minimo">Por persona, importe por confirmar</dd></div>
@@ -179,10 +180,14 @@
 
   <!-- Reservas: el gran texto sobre el campo dorado -->
   <section class="reservas" id="reservas" aria-labelledby="t-reservas">
-    <p class="reservas__frase">Reserva tu diván y te tendremos la shisha lista: <strong data-reserva-sabor>elige tu sabor</strong>.</p>
-    <h2 id="t-reservas" class="reservas__titulo">Reservas</h2>
-    <p class="reservas__estado" data-reserva-estado>Las reservas abren con el local. Vuelve pronto por aquí.</p>
-    <a class="boton boton--negro" href="#reservas" data-reserva-boton hidden>Reservar por WhatsApp</a>
+    <div class="reservas__arriba">
+      <p class="reservas__frase">Te tendremos la shisha lista: <strong data-reserva-sabor>elige tu sabor</strong>.</p>
+      <div class="reservas__accion">
+        <p class="reservas__estado" data-reserva-estado>Las reservas abren con el local. Vuelve pronto por aquí.</p>
+        <a class="boton boton--negro" href="#reservas" data-reserva-boton hidden>Reservar por WhatsApp</a>
+      </div>
+    </div>
+    <h2 id="t-reservas" class="reservas__titulo">Reserva tu diván</h2>
     <div class="reservas__pies">
       <p>Canarias · solo mayores de 18</p>
       <p data-local="redes"><a href="#shishas">Elegir otra shisha</a></p>

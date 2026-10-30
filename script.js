@@ -51,7 +51,7 @@ function elegir(boton, guardar = true) {
   const { sabor, notas, familia } = boton.dataset;
   fichaNombre.textContent = sabor;
   fichaNotas.textContent = notas || `${singular(familia)} de siempre`;
-  fichaFamilia.textContent = familia;
+  fichaFamilia.textContent = singular(familia);
   if (!reducido) {
     ficha.classList.remove("cambia");
     void ficha.offsetWidth;
@@ -156,7 +156,7 @@ if (marco) {
 
 /* ----- entradas: título, luego texto, luego imagen ----- */
 const piezas = document.querySelectorAll(
-  ".titulo, .entradilla, .portada__logo, .portada__titulo, .portada__texto, .portada .boton, .selector__familia, .ficha, .shishas__foto, .pestanas, .carta-bienvenida p, .marco, .datos div, .reservas__frase, .reservas__titulo, .reservas__estado, .pie__nombre"
+  ".lectura .titulo, .shishas .titulo, .galeria .titulo, .abrimos .titulo, .entradilla, .selector__familia, .ficha, .shishas__foto, .pestanas, .carta-bienvenida p, .marco, .datos div, .reservas__arriba, .reservas__titulo, .pie__nombre"
 );
 const vistos = new IntersectionObserver((entradas) => {
   entradas.forEach((en) => {
