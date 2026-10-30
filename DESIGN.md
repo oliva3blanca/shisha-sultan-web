@@ -7,7 +7,7 @@ colors:
   superficie: "#1a160f"
   oro: "#d4a830"
   oro-claro: "#e4ba54"
-  marfil: "#f3ede2"
+  marfil: "#e7e5e2"
   tabaco: "#3a2c08"
 typography:
   display:
@@ -82,7 +82,7 @@ Colores medidos en los archivos del logo.
 | Superficie | **Superficie** | `#1a160f` | Un escalón de tono sobre el negro para separar zonas, sin líneas. |
 | Principal / acción | **Oro** | `#d4a830` | El color del logo: botón principal y campos dorados a pantalla completa. |
 | Títulos sobre negro | **Oro claro** | `#e4ba54` | Títulos y logo sobre negro, igual que en el logo horizontal. |
-| Texto sobre negro | **Marfil** | `#f3ede2` | Todo el texto corrido sobre negro, siempre a tono completo. |
+| Texto sobre negro | **Marfil** | `#e7e5e2` | Todo el texto corrido sobre negro y el papel de la carta. Es un tono piedra neutro, sin amarillear. |
 | Texto secundario sobre oro | **Tabaco** | `#3a2c08` | Notas y descripciones sobre los campos dorados. |
 
 **Proporciones:** negro ~65 %, oro ~25 % (en campos completos: carta de shishas, reservas), marfil ~10 %. El oro aparece en la acción y en grandes superficies, nunca en detalles sueltos por todas partes.
