@@ -1,0 +1,14 @@
+# Herramientas de trabajo
+.taste-skill/inspect/
+.taste-skill/before/
+.taste-skill/after/
+.playwright-cli/
+node_modules/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Nunca subir claves
+.env
+.env.*
