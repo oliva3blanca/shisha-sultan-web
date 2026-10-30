@@ -25,7 +25,7 @@ def sabores(datos):
             out.append(
                 f'<li><button type="button" class="sabor" aria-pressed="false" '
                 f'data-sabor="{escape(s["nombre"])}" data-notas="{escape(s["notas"])}" data-familia="{escape(fam["nombre"])}">'
-                f'<span class="sabor__nombre">{escape(s["nombre"])}</span>'
+                f'<span class="sabor__nombre" translate="no">{escape(s["nombre"])}</span>'
                 f'<span class="sabor__notas">{escape(notas)}</span></button></li>'
             )
         out.append("</ul></div>")

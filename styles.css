@@ -31,16 +31,18 @@
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--negro); }
-body { margin: 0; background: var(--negro); color: var(--marfil); font: 400 var(--step-body)/1.55 var(--texto); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; background: var(--negro); color-scheme: dark; scroll-padding-top: calc(var(--barra) + 16px); }
+body { overflow-x: clip; margin: 0; background: var(--negro); color: var(--marfil); font: 400 var(--step-body)/1.55 var(--texto); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 h1, h2, h3, h4, p, figure, ul, dl, dd { margin: 0; }
 ul { padding: 0; list-style: none; }
 img { display: block; max-width: 100%; height: auto; }
 button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a, button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 :target { scroll-margin-top: calc(var(--barra) + 16px); }
 ::selection { background: var(--oro); color: var(--negro); }
 :focus-visible { outline: 3px solid var(--marfil); outline-offset: 3px; }
+.shishas :focus-visible, .reservas :focus-visible, .hoja :focus-visible { outline-color: var(--negro); }
 [hidden] { display: none !important; }
 .oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .defs { position: absolute; }
@@ -87,7 +89,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
   position: absolute; left: 0; bottom: 0; z-index: 2; margin: 0; background: var(--negro); color: var(--marfil);
   font-size: var(--step-small); padding: 10px 14px;
 }
-.escena__foto--portada img { animation: deriva 18s var(--ease-soft) infinite alternate; transform-origin: 50% 40%; }
+.escena__foto--portada img { animation: deriva 5s var(--ease-soft) both; transform-origin: 50% 40%; }
 @keyframes deriva { from { transform: scale(1.08); } to { transform: scale(1); } }
 
 .escena__foto--lectura img { opacity: 0; transition: opacity 1.6s var(--ease-soft); }
@@ -184,6 +186,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .marco__boton img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 600ms var(--ease-soft); }
 .marco__boton img.activa { opacity: 1; }
 .marco figcaption { font-size: var(--step-small); margin-top: 16px; min-height: 1.5em; }
+.marco__pausa { margin-top: 8px; min-height: 44px; padding: 0; font-size: var(--step-small); text-decoration: underline; text-underline-offset: 0.2em; transition: color var(--t-hover); }
+.marco__pausa:hover { color: var(--oro-claro); }
 
 /* ---------- abrimos ---------- */
 .abrimos { margin-top: var(--hueco); padding: 0 var(--m); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--m); }
@@ -222,7 +226,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .pie__arriba p { text-align: right; }
 .pie__nombre { width: 100%; height: auto; }
 .pie__legal { font-size: var(--step-small); margin-top: 24px; max-width: 62ch; line-height: 1.6; }
-.pie__legal a { text-decoration: underline; }
+.pie__legal a { text-decoration: underline; transition: color var(--t-hover); }
+.pie__legal a:hover { color: var(--oro-claro); }
 
 /* ---------- llegada de la portada (asentada antes de 1,2 s) ---------- */
 .portada__logo, .portada__titulo, .portada__texto, .portada__cuerpo > .boton { animation: llega 700ms var(--ease-out) both; }

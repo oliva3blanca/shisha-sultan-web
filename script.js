@@ -54,8 +54,7 @@ function elegir(boton, guardar = true) {
   fichaFamilia.textContent = singular(familia);
   if (!reducido) {
     ficha.classList.remove("cambia");
-    void ficha.offsetWidth;
-    ficha.classList.add("cambia");
+    requestAnimationFrame(() => requestAnimationFrame(() => ficha.classList.add("cambia")));
   }
   reservaSabor.textContent = sabor;
   actualizarReserva(sabor);
@@ -135,8 +134,10 @@ const marco = document.querySelector("[data-marco]");
 if (marco) {
   const imgs = [...marco.querySelectorAll("img")];
   const pieMarco = marco.querySelector("[data-marco-pie]");
+  const pausa = marco.querySelector("[data-marco-pausa]");
   let actual = 0;
   let reloj = null;
+  let pausado = reducido;
 
   function mostrar(i) {
     actual = (i + imgs.length) % imgs.length;
@@ -144,12 +145,19 @@ if (marco) {
     pieMarco.textContent = imgs[actual].dataset.pie;
   }
   function arrancar() {
-    if (reducido || reloj) return;
+    if (pausado || reloj) return;
     reloj = setInterval(() => mostrar(actual + 1), 3000);
   }
   function parar() { clearInterval(reloj); reloj = null; }
 
   marco.querySelector("[data-marco-siguiente]").addEventListener("click", () => { parar(); mostrar(actual + 1); arrancar(); });
+  function marcarPausa() {
+    pausa.setAttribute("aria-pressed", String(pausado));
+    pausa.textContent = pausado ? "Reanudar la galería" : "Pausar la galería";
+  }
+  pausa.hidden = reducido;
+  marcarPausa();
+  pausa.addEventListener("click", () => { pausado = !pausado; marcarPausa(); pausado ? parar() : arrancar(); });
   new IntersectionObserver(([en]) => (en.isIntersecting ? arrancar() : parar())).observe(marco);
   document.addEventListener("visibilitychange", () => (document.hidden ? parar() : arrancar()));
 }
