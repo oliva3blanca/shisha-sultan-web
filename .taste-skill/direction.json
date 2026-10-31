@@ -22,7 +22,6 @@
   "imagery": "atmosphere",
   "allow": [
     "covered-text",
-    "few-pictures",
     "late-title"
   ],
   "direction": {
@@ -559,5 +558,5 @@
     }
   ],
   "scenes": [],
-  "allowReason": "El cliente pidió una animación de entrada (S → SS → cachimba → Shisha · Sultán → barra) que cubre la portada unos 2,6 s la primera vez por visita; se salta con clic o tecla y no aparece con movimiento reducido. Además, el cliente pidió cambiar todas las fotos por una imagen blanca con la palabra «imagen» hasta tener fotos propias del local."
+  "allowReason": "El cliente pidió una animación de entrada (S → SS → cachimba → Shisha · Sultán → barra) que cubre la portada unos 2,6 s la primera vez por visita; se salta con clic o tecla y no aparece con movimiento reducido."
 }
