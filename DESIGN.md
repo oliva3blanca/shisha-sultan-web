@@ -53,19 +53,19 @@ radius: 0
 El logo original se hizo en Canva. Para la web:
 
 - **El nombre** «Shisha Sultán» es el del logo original, vectorizado con potrace a partir de los JPG, **sin redibujarlo**.
-- **La shisha** se ha redibujado a petición del cliente (versión «B · Ornamentada», sin brasas). Conserva la estructura del original: cazoleta, plato, bola, base y dos mangueras simétricas con boquilla. Se añade una cazoleta de copa, un plato curvo, una cuenta en el mástil, una base bulbosa con banda y boquillas afiladas. Es trazo vectorial redondeado, nítido a cualquier tamaño.
+- **La shisha** es la del logo original, vectorizada sin cambios (se probaron dos versiones redibujadas, pero el cliente prefirió la forma original). Se usa igual en todas las versiones: logo, sello, emblema de la barra y favicon.
 
 | Versión | Archivos | Uso |
 | --- | --- | --- |
 | **Vertical** (shisha + nombre en dos líneas) | `brand/logo-vertical-negro.svg` · `-oro.svg` | Versión principal: portada, carteles, redes |
 | **Shisha + nombre en una línea** | `brand/logo-icono-nombre-negro.svg` · `-oro.svg` | Cartas, vasos, piezas apaisadas |
 | **Shisha** (icono) | `brand/logo-icono-negro.svg` · `-oro.svg` | Avatar, sellos pequeños |
-| **Favicon** | `brand/favicon.svg` | Shisha oro sobre negro, con trazo más grueso para 16–32 px |
+| **Favicon** | `brand/favicon.svg` | Shisha original en oro sobre negro |
 | **Nombre** (solo letras) | `brand/logo-nombre-negro.svg` · `-oro.svg` | Pie de la web |
 | **Emblema** (Shisha · cachimba · Sultán) | `brand/emblema-oro.svg` | Barra de navegación de la web, y la animación de entrada |
 | **Sello** (S · cachimba · S) | `brand/sello-oro.svg` | Monograma para redes, vasos, sellos |
 | Originales | `brand/original/*.jpg` · `sello-gastrobar.png` | Referencia del logo de Canva. El sello circular «Gastrobar» solo existe a 225 px. |
-| Propuestas | `brand/propuestas/` | Las dos variantes de shisha que se valoraron (A y B) |
+| Propuestas | `brand/propuestas/` | Dos versiones redibujadas de la shisha que se valoraron y se descartaron |
 
 **Reglas:**
 - Negro sobre oro, o oro claro sobre negro. Nunca sobre fotos sin un fondo liso detrás.
