@@ -152,15 +152,20 @@ piezas.forEach((el) => {
 
   const n = (k) => Number(svg.dataset[k]);
   const W = n("w"), H = n("h"), hc = n("hc");
-  const vw = window.innerWidth, vh = window.innerHeight;
+  const vista = window.visualViewport;
+  const vw = vista ? vista.width : document.documentElement.clientWidth;
+  const vh = vista ? vista.height : window.innerHeight;
+  svg.style.width = `${W}px`;
+  svg.style.height = `${H}px`;
   const ancho = Math.min(vw * 0.86, 1000);
   const k = ancho / W;
-  svg.style.width = `${ancho}px`;
-  const alto = H * k;
-  const y = (vh - alto) / 2;
-  const kGrande = Math.min(k * 1.9, (vh * 0.42) / H);  // las fases S → SS → cachimba, más grandes
-  const xCompacto = vw / 2 - hc * kGrande;
-  const yCompacto = vh / 2 - (H * kGrande) / 2;
+  const y = (vh - H * k) / 2;
+  // ancho del grupo compacto S · cachimba · S, para que quepa entero en pantallas estrechas
+  const sw = svg.querySelector(".e-s1").getBBox().width;
+  const anchoCompacto = svg.querySelector(".e-cachimba").getBBox().width + 2 * sw * 1.12;
+  const kGrande = Math.max(k, Math.min(k * 1.9, (vh * 0.42) / H, (vw * 0.84) / anchoCompacto));
+  // la cachimba siempre en el centro de la pantalla
+  const enCentro = (escala) => `translate(${vw / 2 - hc * escala}px, ${vh / 2 - (H * escala) / 2}px) scale(${escala})`;
   const xCentro = (vw - ancho) / 2;
   const destino = marca.getBoundingClientRect();
   const kDestino = destino.width / ancho;
@@ -180,16 +185,16 @@ piezas.forEach((el) => {
     { offset: 0.14, opacity: 1, transform: tx(s1) },
     { offset: 0.15, transform: tx(s1), easing: sale },
     { offset: 0.31, transform: tx(s1c) },
-    { offset: 0.44, transform: tx(s1c), easing: sale },
-    { offset: 0.63, transform: tx(0) },
+    { offset: 0.46, transform: tx(s1c), easing: sale },
+    { offset: 0.65, transform: tx(0) },
     { offset: 1, opacity: 1, transform: tx(0) },
   ]);
   animar(pieza(".e-s2"), [
     { offset: 0, opacity: 0, transform: tx(s2) },
     { offset: 0.15, opacity: 0, transform: tx(s2), easing: sale },
     { offset: 0.31, opacity: 1, transform: tx(s2c) },
-    { offset: 0.44, transform: tx(s2c), easing: sale },
-    { offset: 0.63, transform: tx(0) },
+    { offset: 0.46, transform: tx(s2c), easing: sale },
+    { offset: 0.65, transform: tx(0) },
     { offset: 1, opacity: 1, transform: tx(0) },
   ]);
   // 3. la cachimba aparece en medio
@@ -203,22 +208,21 @@ piezas.forEach((el) => {
   for (const sel of [".e-r1", ".e-r2"]) {
     animar(pieza(sel), [
       { offset: 0, opacity: 0, transform: "translate(-28px, 0px)" },
-      { offset: 0.5, opacity: 0, transform: "translate(-28px, 0px)", easing: sale },
-      { offset: 0.67, opacity: 1, transform: "translate(0px, 0px)" },
+      { offset: 0.52, opacity: 0, transform: "translate(-28px, 0px)", easing: sale },
+      { offset: 0.69, opacity: 1, transform: "translate(0px, 0px)" },
       { offset: 1, opacity: 1, transform: "translate(0px, 0px)" },
     ]);
   }
   // 5. todo el logotipo se centra y luego vuela a la barra
   anims.push(svg.animate([
-    { offset: 0, transform: `translate(${xCompacto}px, ${yCompacto}px) scale(${kGrande})` },
-    { offset: 0.44, transform: `translate(${xCompacto}px, ${yCompacto}px) scale(${kGrande})`, easing: sale },
-    { offset: 0.63, transform: `translate(${xCentro}px, ${y}px) scale(${k})` },
+    { offset: 0, transform: enCentro(kGrande) },
+    { offset: 0.4, transform: enCentro(kGrande), easing: sale },
+    { offset: 0.46, transform: enCentro(k), easing: sale },
+    { offset: 0.65, transform: `translate(${xCentro}px, ${y}px) scale(${k})` },
     { offset: 0.71, transform: `translate(${xCentro}px, ${y}px) scale(${k})`, easing: viaje },
     { offset: 0.94, transform: `translate(${destino.left}px, ${destino.top}px) scale(${k * kDestino})` },
     { offset: 1, transform: `translate(${destino.left}px, ${destino.top}px) scale(${k * kDestino})` },
   ], { duration: T, fill: "both" }));
-  svg.style.width = `${W}px`;
-  svg.style.height = `${H}px`;
   anims.push(fondo.animate([
     { offset: 0, opacity: 1 }, { offset: 0.71, opacity: 1, easing: sale }, { offset: 0.88, opacity: 0 }, { offset: 1, opacity: 0 },
   ], { duration: T, fill: "both" }));
