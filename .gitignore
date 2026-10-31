@@ -12,3 +12,6 @@ Thumbs.db
 # Nunca subir claves
 .env
 .env.*
+
+# Vídeos de presentación (pesan mucho para git)
+video/
