@@ -1,7 +1,7 @@
 ---
 version: 2.0-borrador
 name: Shisha Sultán
-description: Branding de Shisha Sultán, gastrobar y lounge de cachimbas en Canarias, construido a partir de su logo existente. Negro y oro, la cachimba de línea como símbolo y el rombo capitoné como único motivo.
+description: Branding de Shisha Sultán, gastrobar y lounge de cachimbas en La Laguna (Tenerife), construido a partir de su logo existente. Negro y oro, la cachimba de línea como símbolo y el rombo capitoné como único motivo.
 colors:
   negro: "#0c0a07"
   superficie: "#1a160f"
@@ -189,11 +189,18 @@ Referencia: `~/.claude/references/awesome-design-md/design-md/lamborghini/DESIGN
 
 - La carta completa, con precios, extraída del PDF: `contenido/carta-extraida.txt`. Incluye shishas (18 €, 12 sabores), suplemento de cambio de cazoleta (8 €), tés, infusiones, cócteles con y sin alcohol, picoteo, postres, cervezas, vinos, destilados y café, más el aviso de «Consumición mínima por persona».
 
-## 9. Pendiente de confirmar
+## 9. Datos del local
+
+Tomados de su ficha de Google Maps (https://maps.app.goo.gl/E8HLa1wCTCPhyPnT7):
+
+- **Dirección:** Calle Heraclio Sánchez, 27, 38204 San Cristóbal de La Laguna (Santa Cruz de Tenerife), en el Centro Comercial Galaxia.
+- **Teléfono:** 822 64 16 12.
+- **Horario:** de domingo a jueves, de 18:00 a 24:00; viernes y sábado, de 18:00 a 2:00.
+
+## 10. Pendiente de confirmar
 
 - Nombre de la fuente del logo en Canva (opcional; el nombre ya está vectorizado).
-- **Ubicación:** Canarias, sin dirección todavía. La web usará textos provisionales marcados.
-- **Horario, teléfono, correo y redes.**
-- **Importe de la consumición mínima** por persona (la carta no lo indica).
+- **Importe de la consumición mínima** por persona (la carta no lo indica). Se rellena en `LOCAL.minimo` de `script.js`.
+- **WhatsApp e Instagram**, si los hay. Se rellenan en el bloque `LOCAL` de `script.js`.
 - **Normativa:** el aviso de +18 y las reglas sobre publicidad de productos de tabaco en Canarias y España. Conviene que lo revise alguien que las conozca antes de publicar.
 - **Fotos propias del local**, cuando las haya.

@@ -1,6 +1,6 @@
 # Shisha Sultán · Web
 
-Web de **Shisha Sultán**, gastrobar y lounge de cachimbas en Canarias.
+Web de **Shisha Sultán**, gastrobar y lounge de cachimbas en La Laguna (Tenerife). Calle Heraclio Sánchez, 27 · 822 64 16 12.
 
 **Web publicada:** https://oliva3blanca.github.io/shisha-sultan-web/
 
@@ -36,20 +36,20 @@ y abre `http://localhost:8000`.
 
 ## Rellenar los datos del local
 
-Al principio de `script.js` está el bloque `LOCAL`:
+La dirección, el horario y el teléfono están escritos en `index.html`: en la sección «Dónde y cuándo», en reservas, en el pie y en los datos estructurados para Google (`application/ld+json`, en el `<head>`). Si cambian, cámbialos en esos cuatro sitios.
+
+Lo que aún falta se rellena al principio de `script.js`, en el bloque `LOCAL`:
 
 ```js
 const LOCAL = {
-  whatsapp: "",   // solo números con prefijo, p. ej. "34600000000": activa el botón de reserva
-  direccion: "",
-  horario: "",
-  minimo: "",     // consumición mínima por persona
-  instagram: "",
+  whatsapp: "",   // solo números con prefijo, p. ej. "34600000000": añade el botón «Reservar por WhatsApp»
+  minimo: "",     // consumición mínima, p. ej. "10 € por persona"
+  instagram: "",  // usuario, con o sin @
 };
 ```
 
-Los campos vacíos se muestran como «por confirmar». Con el WhatsApp puesto, el botón «Reservar por WhatsApp» aparece solo y el mensaje incluye la shisha que el visitante eligió.
+Con el WhatsApp puesto, el botón aparece junto al de llamar y el mensaje incluye la shisha que el visitante eligió.
 
 ## Pendiente
 
-Dirección, horario, WhatsApp, redes, importe de la consumición mínima y fotos propias del local. Revisar también la normativa sobre publicidad de tabaco antes de publicar. Ver «Pendiente de confirmar» en `DESIGN.md`.
+WhatsApp, redes, importe de la consumición mínima y fotos propias del local. Revisar también la normativa sobre publicidad de tabaco antes de publicar. Ver «Pendiente de confirmar» en `DESIGN.md`.

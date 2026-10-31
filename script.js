@@ -1,12 +1,12 @@
 /* Shisha Sultán · comportamiento de la web */
 
 /* ===== DATOS DEL LOCAL =====
-   Rellena estos campos cuando los tengas. Los vacíos se muestran como «por confirmar».
-   whatsapp: solo números con prefijo de país, sin espacios ni «+». Ejemplo: "34600000000". */
+   Dirección, horario y teléfono están escritos en index.html (sección «Dónde y cuándo», reservas y pie).
+   Rellena estos campos cuando los tengas; si están vacíos no se muestra nada nuevo.
+   whatsapp: solo números con prefijo de país, sin espacios ni «+». Ejemplo: "34600000000".
+   minimo: importe de la consumición mínima, por ejemplo "10 € por persona". */
 const LOCAL = {
   whatsapp: "",
-  direccion: "",
-  horario: "",
   minimo: "",
   instagram: "",
 };
@@ -15,7 +15,7 @@ document.documentElement.classList.add("js");
 const reducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ----- datos del local en la página ----- */
-for (const campo of ["direccion", "horario", "minimo"]) {
+for (const campo of ["minimo"]) {
   const valor = LOCAL[campo].trim();
   if (!valor) continue;
   document.querySelectorAll(`[data-local="${campo}"]`).forEach((el) => { el.textContent = valor; });
@@ -164,7 +164,7 @@ if (marco) {
 
 /* ----- entradas: título, luego texto, luego imagen ----- */
 const piezas = document.querySelectorAll(
-  ".lectura .titulo, .shishas .titulo, .galeria .titulo, .abrimos .titulo, .entradilla, .selector__familia, .ficha, .shishas__foto, .pestanas, .carta-bienvenida p, .marco, .datos div, .reservas__arriba, .reservas__titulo, .pie__nombre"
+  ".lectura .titulo, .shishas .titulo, .galeria .titulo, .donde .titulo, .entradilla, .selector__familia, .ficha, .shishas__foto, .pestanas, .carta-bienvenida p, .marco, .datos div, .reservas__arriba, .reservas__titulo, .pie__nombre"
 );
 const vistos = new IntersectionObserver((entradas) => {
   entradas.forEach((en) => {

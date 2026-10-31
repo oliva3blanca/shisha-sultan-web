@@ -189,13 +189,15 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .marco__pausa { margin-top: 8px; min-height: 44px; padding: 0; font-size: var(--step-small); text-decoration: underline; text-underline-offset: 0.2em; transition: color var(--t-hover); }
 .marco__pausa:hover { color: var(--oro-claro); }
 
-/* ---------- abrimos ---------- */
-.abrimos { margin-top: var(--hueco); padding: 0 var(--m); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--m); }
-.abrimos .titulo { grid-column: 1 / 6; max-width: 8ch; }
+/* ---------- dónde y cuándo ---------- */
+.donde { margin-top: var(--hueco); padding: 0 var(--m); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--m); }
+.donde .titulo { grid-column: 1 / 6; max-width: 8ch; }
 .datos { grid-column: 7 / 13; display: grid; gap: 4px; align-self: start; }
 .datos div { display: grid; grid-template-columns: 12rem 1fr; gap: var(--m); background: var(--superficie); padding: 20px 24px; align-items: baseline; }
 .datos dt { font: 500 var(--step-lead)/1.1 var(--display); color: var(--oro-claro); }
 .datos dd { font-size: var(--step-lead); line-height: 1.35; }
+.datos a { color: var(--oro-claro); transition: color var(--t-hover); }
+.datos a:hover { color: var(--marfil); }
 
 /* ---------- reservas ---------- */
 .reservas {
@@ -212,6 +214,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 }
 .reservas__estado { font-size: var(--step-lead); line-height: 1.35; max-width: 26ch; }
 .reservas .boton { margin-top: 24px; }
+.reservas .boton + .boton { margin-left: 8px; }
 .reservas__pies { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 40px; font-size: var(--step-small); }
 
 /* ---------- pie ---------- */
@@ -264,8 +267,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
   .portada__titulo { font-size: clamp(2.25rem, 9vw, 3rem); margin-top: 32px; }
   .portada__cuerpo { padding: 36px 20px 24px; }
 
-  .shishas__marco, .galeria, .abrimos { grid-template-columns: 1fr; row-gap: 40px; }
-  .shishas__intro, .selector, .ficha, .shishas__foto, .galeria > *, .marco, .abrimos .titulo, .datos { grid-column: 1; grid-row: auto; }
+  .shishas__marco, .galeria, .donde { grid-template-columns: 1fr; row-gap: 40px; }
+  .shishas__intro, .selector, .ficha, .shishas__foto, .galeria > *, .marco, .donde .titulo, .datos { grid-column: 1; grid-row: auto; }
   .selector { grid-template-columns: 1fr; }
   .ficha { position: relative; top: 0; order: 3; }
   .shishas__foto { order: 4; }
@@ -274,15 +277,19 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
   .escena__foto figcaption, .escena__pie { display: none; }
   .datos { grid-template-columns: 1fr 1fr; }
   .datos div:last-child { grid-column: 1 / -1; }
-  .reservas__arriba { grid-template-columns: 1fr; row-gap: 32px; }
-  .reservas__frase, .reservas__accion { grid-column: 1; }
+  .reservas__arriba { grid-template-columns: 1fr 1fr; gap: 32px var(--m); }
+  .reservas__frase { grid-column: 1; }
+  .reservas__accion { grid-column: 2; }
   .lectura { padding-right: 0; padding-top: 56px; }
   .hoja { padding: 24px 20px; }
   .hoja__grupo ul { columns: 1; }
 
   .marco { width: 78vw; justify-self: center; }
   .reservas { min-height: 86svh; }
-  .reservas__titulo { font-size: 34vw; white-space: normal; line-height: 0.82; }
+  .reservas { grid-template-rows: auto auto 1fr auto; }
+  .reservas__titulo { order: -1; align-self: start; font-size: 34vw; white-space: normal; line-height: 0.82; margin-bottom: 40px; }
+  .reservas .boton + .boton { margin-left: 0; }
+  .reservas__accion { display: flex; flex-direction: column; align-items: flex-start; }
   .reservas__pies { flex-direction: column; margin-top: 48px; }
   .pie { min-height: 88svh; }
   .pie__arriba p { text-align: left; }
@@ -290,6 +297,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 
 @media (max-width: 520px) {
   .datos { grid-template-columns: 1fr; }
+  .reservas__arriba { grid-template-columns: 1fr; }
+  .reservas__frase, .reservas__accion { grid-column: 1; }
 }
 
 /* ---------- movimiento reducido ---------- */
