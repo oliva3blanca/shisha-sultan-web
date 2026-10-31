@@ -19,7 +19,8 @@
     "bytes": 7380582,
     "credit": "\"Török kávéházban\", public domain, via Wikimedia Commons",
     "notes": [],
-    "saved": "2026-10-30T15:51:16.481Z"
+    "saved": "2026-10-30T15:51:16.481Z",
+    "titulo_es": "Casa de café otomana"
   },
   {
     "file": "assets/topkapi-palace-imperial-hall-general-view.jpg",
@@ -43,31 +44,8 @@
     "notes": [
       "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
     ],
-    "saved": "2026-10-30T15:51:17.352Z"
-  },
-  {
-    "file": "assets/topkapi-palace-harem-interior-rococo-room.jpg",
-    "media": "image",
-    "ref": "commons:187409233",
-    "title": "Topkapi Palace Harem Interior Rococo Room",
-    "creator": "Emirrnk1",
-    "creatorUrl": null,
-    "date": "2026-03-27",
-    "license": "CC BY-SA 4.0",
-    "licenseCode": "by-sa",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "creditRequired": true,
-    "page": "https://commons.wikimedia.org/wiki/File:Topkapi_Palace_Harem_Interior_Rococo_Room.jpg",
-    "via": "Wikimedia Commons",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Topkapi_Palace_Harem_Interior_Rococo_Room.jpg/1920px-Topkapi_Palace_Harem_Interior_Rococo_Room.jpg",
-    "width": 1920,
-    "height": 2560,
-    "bytes": 1559180,
-    "credit": "\"Topkapi Palace Harem Interior Rococo Room\" by Emirrnk1, CC BY-SA 4.0, via Wikimedia Commons",
-    "notes": [
-      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-    ],
-    "saved": "2026-10-30T15:51:17.919Z"
+    "saved": "2026-10-30T15:51:17.352Z",
+    "titulo_es": "Salón Imperial de Topkapı"
   },
   {
     "file": "assets/topkapi-palace-istanbul-turkey.jpg",
@@ -89,31 +67,8 @@
     "bytes": 668447,
     "credit": "\"Topkapi Palace, Istanbul, Turkey\" by Thingstodoeverywhere, CC0, via Wikimedia Commons",
     "notes": [],
-    "saved": "2026-10-30T15:51:18.298Z"
-  },
-  {
-    "file": "assets/iznik-tiles-istanbul-archaeological-museums.jpg",
-    "media": "image",
-    "ref": "commons:144474947",
-    "title": "Iznik tiles, Istanbul Archaeological Museums",
-    "creator": "Carole Raddato",
-    "creatorUrl": null,
-    "date": "Taken on 15 April 2023, 15:54:50",
-    "license": "CC BY-SA 2.0",
-    "licenseCode": "by-sa",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-    "creditRequired": true,
-    "page": "https://commons.wikimedia.org/wiki/File:Iznik_tiles,_Istanbul_Archaeological_Museums.jpg",
-    "via": "Wikimedia Commons",
-    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Iznik_tiles%2C_Istanbul_Archaeological_Museums.jpg/1920px-Iznik_tiles%2C_Istanbul_Archaeological_Museums.jpg",
-    "width": 1920,
-    "height": 1440,
-    "bytes": 699301,
-    "credit": "\"Iznik tiles, Istanbul Archaeological Museums\" by Carole Raddato, CC BY-SA 2.0, via Wikimedia Commons",
-    "notes": [
-      "Share-alike: an altered version (recoloured, combined with other pictures) must be shared under the same licence."
-    ],
-    "saved": "2026-10-30T15:51:18.679Z"
+    "saved": "2026-10-30T15:51:18.298Z",
+    "titulo_es": "Techo del harén de Topkapı"
   },
   {
     "file": "assets/pierre-loti.jpg",
@@ -135,6 +90,7 @@
     "bytes": 371716,
     "credit": "\"Pierre Loti\" by Nérostrateur, public domain, via Wikimedia Commons",
     "notes": [],
-    "saved": "2026-10-30T15:51:19.193Z"
+    "saved": "2026-10-30T15:51:19.193Z",
+    "titulo_es": "Pierre Loti"
   }
 ]

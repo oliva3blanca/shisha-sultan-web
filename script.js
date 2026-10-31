@@ -112,59 +112,11 @@ if (lista) {
   activar(0);
 }
 
-/* ----- la foto fija cambia con la sección ----- */
-const fotoLectura = document.querySelector(".escena__foto--lectura");
-if (fotoLectura) {
-  const fotos = [...fotoLectura.querySelectorAll("img")];
-  const pie = fotoLectura.querySelector("[data-pie]");
-  const pies = ["Un café otomano, pintura de hacia 1560", "Sala rococó del harén, palacio de Topkapı"];
-  const obs = new IntersectionObserver((entradas) => {
-    entradas.forEach((en) => {
-      if (!en.isIntersecting) return;
-      const i = Number(en.target.dataset.foto);
-      fotos.forEach((f, j) => f.classList.toggle("activa", i === j));
-      pie.textContent = pies[i];
-    });
-  }, { rootMargin: "-45% 0px -45% 0px" });
-  document.querySelectorAll("[data-foto]").forEach((s) => obs.observe(s));
-}
 
-/* ----- galería: un marco, el contenido cambia ----- */
-const marco = document.querySelector("[data-marco]");
-if (marco) {
-  const imgs = [...marco.querySelectorAll("img")];
-  const pieMarco = marco.querySelector("[data-marco-pie]");
-  const pausa = marco.querySelector("[data-marco-pausa]");
-  let actual = 0;
-  let reloj = null;
-  let pausado = reducido;
-
-  function mostrar(i) {
-    actual = (i + imgs.length) % imgs.length;
-    imgs.forEach((im, j) => im.classList.toggle("activa", j === actual));
-    pieMarco.textContent = imgs[actual].dataset.pie;
-  }
-  function arrancar() {
-    if (pausado || reloj) return;
-    reloj = setInterval(() => mostrar(actual + 1), 3000);
-  }
-  function parar() { clearInterval(reloj); reloj = null; }
-
-  marco.querySelector("[data-marco-siguiente]").addEventListener("click", () => { parar(); mostrar(actual + 1); arrancar(); });
-  function marcarPausa() {
-    pausa.setAttribute("aria-pressed", String(pausado));
-    pausa.textContent = pausado ? "Reanudar la galería" : "Pausar la galería";
-  }
-  pausa.hidden = reducido;
-  marcarPausa();
-  pausa.addEventListener("click", () => { pausado = !pausado; marcarPausa(); pausado ? parar() : arrancar(); });
-  new IntersectionObserver(([en]) => (en.isIntersecting ? arrancar() : parar())).observe(marco);
-  document.addEventListener("visibilitychange", () => (document.hidden ? parar() : arrancar()));
-}
 
 /* ----- entradas: título, luego texto, luego imagen ----- */
 const piezas = document.querySelectorAll(
-  ".lectura .titulo, .shishas .titulo, .galeria .titulo, .donde .titulo, .entradilla, .selector__familia, .ficha, .shishas__foto, .pestanas, .carta-bienvenida p, .marco, .datos div, .reservas__arriba, .reservas__titulo, .pie__nombre"
+  ".lectura .titulo, .shishas .titulo, .donde .titulo, .entradilla, .selector__familia, .ficha, .shishas__foto, .pestanas, .datos div, .reservas__arriba, .reservas__titulo, .pie__nombre"
 );
 const vistos = new IntersectionObserver((entradas) => {
   entradas.forEach((en) => {
@@ -179,3 +131,109 @@ piezas.forEach((el) => {
   el.style.setProperty("--i", String(Math.min([...el.parentElement.children].indexOf(el), 6)));
   vistos.observe(el);
 });
+
+/* ----- animación de entrada ----- */
+(function intro() {
+  const raizHtml = document.documentElement;
+  if (!raizHtml.classList.contains("intro-pendiente")) return;
+  const marca = document.querySelector(".barra .emblema");
+  if (!marca || !("animate" in Element.prototype)) { raizHtml.classList.remove("intro-pendiente"); return; }
+
+  const capa = document.createElement("div");
+  capa.className = "intro";
+  capa.setAttribute("aria-hidden", "true");
+  const fondo = document.createElement("div");
+  fondo.className = "intro__fondo";
+  const svg = marca.cloneNode(true);
+  capa.append(fondo, svg);
+  document.body.append(capa);
+  raizHtml.classList.add("intro-activa");
+  raizHtml.classList.remove("intro-pendiente");
+
+  const n = (k) => Number(svg.dataset[k]);
+  const W = n("w"), H = n("h"), hc = n("hc");
+  const vw = window.innerWidth, vh = window.innerHeight;
+  const ancho = Math.min(vw * 0.86, 1000);
+  const k = ancho / W;
+  svg.style.width = `${ancho}px`;
+  const alto = H * k;
+  const y = (vh - alto) / 2;
+  const kGrande = Math.min(k * 1.9, (vh * 0.42) / H);  // las fases S → SS → cachimba, más grandes
+  const xCompacto = vw / 2 - hc * kGrande;
+  const yCompacto = vh / 2 - (H * kGrande) / 2;
+  const xCentro = (vw - ancho) / 2;
+  const destino = marca.getBoundingClientRect();
+  const kDestino = destino.width / ancho;
+
+  const T = 2600;
+  const sale = "cubic-bezier(0.22, 1, 0.36, 1)";
+  const viaje = "cubic-bezier(0.76, 0, 0.24, 1)";
+  const pieza = (sel) => svg.querySelector(sel);
+  const anims = [];
+  const animar = (el, frames) => anims.push(el.animate(frames, { duration: T, fill: "both" }));
+  const tx = (x, extra = "") => `translate(${x}px, 0px)${extra}`;
+
+  // 1. una S en el centro · 2. se desdobla · 4. se abre hasta su sitio
+  const s1 = n("dxs1"), s1c = n("dx1c"), s2 = n("dxs2"), s2c = n("dx2c");
+  animar(pieza(".e-s1"), [
+    { offset: 0, opacity: 0, transform: tx(s1, " scale(0.82)"), easing: sale },
+    { offset: 0.14, opacity: 1, transform: tx(s1) },
+    { offset: 0.15, transform: tx(s1), easing: sale },
+    { offset: 0.31, transform: tx(s1c) },
+    { offset: 0.44, transform: tx(s1c), easing: sale },
+    { offset: 0.63, transform: tx(0) },
+    { offset: 1, opacity: 1, transform: tx(0) },
+  ]);
+  animar(pieza(".e-s2"), [
+    { offset: 0, opacity: 0, transform: tx(s2) },
+    { offset: 0.15, opacity: 0, transform: tx(s2), easing: sale },
+    { offset: 0.31, opacity: 1, transform: tx(s2c) },
+    { offset: 0.44, transform: tx(s2c), easing: sale },
+    { offset: 0.63, transform: tx(0) },
+    { offset: 1, opacity: 1, transform: tx(0) },
+  ]);
+  // 3. la cachimba aparece en medio
+  animar(pieza(".e-cachimba"), [
+    { offset: 0, opacity: 0, transform: "translate(0px, 14px) scale(0.9)" },
+    { offset: 0.29, opacity: 0, transform: "translate(0px, 14px) scale(0.9)", easing: sale },
+    { offset: 0.41, opacity: 1, transform: "translate(0px, 0px) scale(1)" },
+    { offset: 1, opacity: 1, transform: "translate(0px, 0px) scale(1)" },
+  ]);
+  // 4. de cada S brota el resto de su palabra
+  for (const sel of [".e-r1", ".e-r2"]) {
+    animar(pieza(sel), [
+      { offset: 0, opacity: 0, transform: "translate(-28px, 0px)" },
+      { offset: 0.5, opacity: 0, transform: "translate(-28px, 0px)", easing: sale },
+      { offset: 0.67, opacity: 1, transform: "translate(0px, 0px)" },
+      { offset: 1, opacity: 1, transform: "translate(0px, 0px)" },
+    ]);
+  }
+  // 5. todo el logotipo se centra y luego vuela a la barra
+  anims.push(svg.animate([
+    { offset: 0, transform: `translate(${xCompacto}px, ${yCompacto}px) scale(${kGrande})` },
+    { offset: 0.44, transform: `translate(${xCompacto}px, ${yCompacto}px) scale(${kGrande})`, easing: sale },
+    { offset: 0.63, transform: `translate(${xCentro}px, ${y}px) scale(${k})` },
+    { offset: 0.71, transform: `translate(${xCentro}px, ${y}px) scale(${k})`, easing: viaje },
+    { offset: 0.94, transform: `translate(${destino.left}px, ${destino.top}px) scale(${k * kDestino})` },
+    { offset: 1, transform: `translate(${destino.left}px, ${destino.top}px) scale(${k * kDestino})` },
+  ], { duration: T, fill: "both" }));
+  svg.style.width = `${W}px`;
+  svg.style.height = `${H}px`;
+  anims.push(fondo.animate([
+    { offset: 0, opacity: 1 }, { offset: 0.71, opacity: 1, easing: sale }, { offset: 0.88, opacity: 0 }, { offset: 1, opacity: 0 },
+  ], { duration: T, fill: "both" }));
+
+  let terminado = false;
+  function terminar() {
+    if (terminado) return;
+    terminado = true;
+    capa.remove();
+    raizHtml.classList.remove("intro-activa");
+    try { sessionStorage.setItem("shisha-sultan:intro", "1"); } catch (e) { /* sin almacenamiento */ }
+    window.removeEventListener("keydown", saltar);
+  }
+  function saltar() { anims.forEach((a) => a.finish()); terminar(); }
+  anims[anims.length - 1].finished.then(terminar, terminar);
+  capa.addEventListener("click", saltar);
+  window.addEventListener("keydown", saltar);
+})();

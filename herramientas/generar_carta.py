@@ -64,8 +64,9 @@ def creditos(lista):
         autor = re.sub(r"\s+", " ", c.get("creator") or "autor desconocido").strip()
         if autor.lower().startswith("unknown"):
             autor = "autor desconocido"
-        partes.append(f'<a href="{escape(c["page"])}">{escape(c["title"])}</a>, {escape(autor)}, {escape(lic)}')
-    return " · ".join(partes) + " (Wikimedia Commons)"
+        titulo = c.get("titulo_es") or c["title"]
+        partes.append(f'<a href="{escape(c["page"])}">{escape(titulo)}</a> ({escape(autor)}, {escape(lic)})')
+    return ", ".join(partes) + ", en Wikimedia Commons"
 
 
 def poner(html, marca, contenido):

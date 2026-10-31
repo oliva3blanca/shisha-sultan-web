@@ -61,7 +61,9 @@ El logo original se hizo en Canva. Para la web:
 | **Shisha + nombre en una línea** | `brand/logo-icono-nombre-negro.svg` · `-oro.svg` | Cartas, vasos, piezas apaisadas |
 | **Shisha** (icono) | `brand/logo-icono-negro.svg` · `-oro.svg` | Avatar, sellos pequeños |
 | **Favicon** | `brand/favicon.svg` | Shisha oro sobre negro, con trazo más grueso para 16–32 px |
-| **Nombre** (solo letras) | `brand/logo-nombre-negro.svg` · `-oro.svg` | Barra de navegación y pie |
+| **Nombre** (solo letras) | `brand/logo-nombre-negro.svg` · `-oro.svg` | Pie de la web |
+| **Emblema** (Shisha · cachimba · Sultán) | `brand/emblema-oro.svg` | Barra de navegación de la web, y la animación de entrada |
+| **Sello** (S · cachimba · S) | `brand/sello-oro.svg` | Monograma para redes, vasos, sellos |
 | Originales | `brand/original/*.jpg` · `sello-gastrobar.png` | Referencia del logo de Canva. El sello circular «Gastrobar» solo existe a 225 px. |
 | Propuestas | `brand/propuestas/` | Las dos variantes de shisha que se valoraron (A y B) |
 
@@ -162,7 +164,7 @@ Tratamiento: luz cálida, sombras profundas y encuadre vertical 4:5 en la mitad 
 - **Contacto:** el correo o el teléfono como gran texto de display sobre un campo de oro.
 - **Pie:** el logotipo a todo lo ancho, en oro claro sobre negro.
 
-**Movimiento.** Fundido lento entre las imágenes de la mitad fija, entrada escalonada de títulos y textos, y respuesta en cada control. Solo `transform` y `opacity`, con alternativa para `prefers-reduced-motion`.
+**Movimiento.** Animación de entrada la primera vez por visita: aparece una S, se desdobla, en medio aparece la cachimba, cada S brota en su palabra («Shisha», «Sultán») y el emblema vuela a la barra (unos 2,6 s, se salta con clic o tecla). Además, entrada escalonada de títulos y textos y respuesta en cada control. Solo `transform` y `opacity`, con alternativa para `prefers-reduced-motion`.
 
 **Prohibido (Taste Skill):** etiquetas pequeñas sobre los títulos, monoespaciadas, numeración 01/02/03, líneas finas, degradados, sombras en reposo, filas de tarjetas idénticas con icono, cristal y emojis.
 

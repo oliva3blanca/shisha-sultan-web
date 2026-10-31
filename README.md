@@ -9,7 +9,7 @@ Web de **Shisha Sultán**, gastrobar y lounge de cachimbas en La Laguna (Tenerif
 | Ruta | Qué es |
 | --- | --- |
 | `DESIGN.md` | Branding completo: concepto, tono, paleta, tipografías, logo, estilo visual y referencias. |
-| `brand/` | Logo en SVG (vertical, horizontal, icono, nombre, favicon) en negro y oro, y la hoja de branding. |
+| `brand/` | Logo en SVG (vertical, horizontal, icono, nombre, emblema, sello, favicon) en negro y oro, y la hoja de branding. |
 | `brand/original/` | Logo original de Canva, como referencia. |
 | `brand/propuestas/` | Variantes de la shisha que se valoraron. |
 | `contenido/` | Textos reales del local (la carta extraída del PDF). |

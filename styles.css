@@ -13,7 +13,7 @@
   --texto: "Albert Sans", "Helvetica Neue", Arial, sans-serif;
 
   --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
-  --step-body: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --step-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
   --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
   --step-head: clamp(2.5rem, 1.4rem + 3.4vw, 4.5rem);
   --step-display: clamp(5rem, 21.5vw, 26rem);
@@ -74,7 +74,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
   position: sticky; top: 0; z-index: 10; height: var(--barra); background: var(--negro);
   display: flex; align-items: center; gap: 32px; padding: 0 var(--m);
 }
-.barra__marca img { width: 168px; height: auto; }
+.barra__marca { display: block; line-height: 0; }
+.emblema { display: block; width: auto; height: 44px; color: var(--oro-claro); overflow: visible; }
 .barra nav { margin-left: auto; }
 .barra__enlaces { display: flex; gap: 28px; }
 .barra__enlaces a { text-decoration: none; padding: 8px 0; transition: color var(--t-hover); }
@@ -128,7 +129,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .sabor[aria-pressed="true"] { background: var(--negro); color: var(--oro-claro); }
 .sabor[aria-pressed="true"] .sabor__notas { color: var(--marfil); }
 .sabor__nombre { font: 500 var(--step-lead)/1.1 var(--display); }
-.sabor__notas { font-size: var(--step-small); color: var(--tabaco); line-height: 1.4; }
+.sabor__notas { font-size: var(--step-body); color: var(--tabaco); line-height: 1.35; }
 
 .ficha {
   grid-column: 8 / 13; grid-row: 1 / 4; align-self: start; position: sticky; top: calc(var(--barra) + 24px);
@@ -173,21 +174,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .hoja__plato small { display: block; font-size: var(--step-small); color: #4a4334; line-height: 1.4; margin-top: 2px; }
 .hoja__precio { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 500; }
 
-.casa .titulo { margin-bottom: 40px; }
-.carta-bienvenida { max-width: 34rem; display: grid; gap: 1.1em; }
-.marca { background: var(--oro); color: var(--negro); padding: 0 4px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
-.firma { font: 500 var(--step-lead)/1.1 var(--display); color: var(--oro-claro); margin-top: 0.6em; }
 
-/* ---------- galería ---------- */
-.galeria { margin-top: var(--hueco); padding: 0 var(--m); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--m); }
-.galeria__texto { grid-column: 1 / 6; align-self: center; }
-.marco { grid-column: 7 / 12; margin: 0; }
-.marco__boton { position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: var(--superficie); cursor: pointer; }
-.marco__boton img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 600ms var(--ease-soft); }
-.marco__boton img.activa { opacity: 1; }
-.marco figcaption { font-size: var(--step-small); margin-top: 16px; min-height: 1.5em; }
-.marco__pausa { margin-top: 8px; min-height: 44px; padding: 0; font-size: var(--step-small); text-decoration: underline; text-underline-offset: 0.2em; transition: color var(--t-hover); }
-.marco__pausa:hover { color: var(--oro-claro); }
 
 /* ---------- dónde y cuándo ---------- */
 .donde { margin-top: var(--hueco); padding: 0 var(--m); display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--m); }
@@ -215,7 +202,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .reservas__estado { font-size: var(--step-lead); line-height: 1.35; max-width: 26ch; }
 .reservas .boton { margin-top: 24px; }
 .reservas .boton + .boton { margin-left: 8px; }
-.reservas__pies { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 40px; font-size: var(--step-small); }
+.reservas__pies { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 40px; font-size: var(--step-body); }
 
 /* ---------- pie ---------- */
 .pie { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; color: var(--marfil); }
@@ -228,9 +215,21 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 .pie__arriba a:hover { color: var(--oro-claro); }
 .pie__arriba p { text-align: right; }
 .pie__nombre { width: 100%; height: auto; }
-.pie__legal { font-size: var(--step-small); margin-top: 24px; max-width: 62ch; line-height: 1.6; }
+.pie__legal { font-size: var(--step-body); margin-top: 24px; max-width: 62ch; line-height: 1.6; }
 .pie__legal a { text-decoration: underline; transition: color var(--t-hover); }
 .pie__legal a:hover { color: var(--oro-claro); }
+
+/* ---------- animación de entrada: S → SS → cachimba → Shisha · Sultán → barra ---------- */
+.intro-pendiente body::before {
+  content: ""; position: fixed; inset: 0; z-index: 50; background: var(--negro);
+  animation: cubre-fuera 300ms 3.2s forwards; /* si el script no llega, la tapa se va sola */
+}
+@keyframes cubre-fuera { to { opacity: 0; visibility: hidden; } }
+.intro { position: fixed; inset: 0; z-index: 60; cursor: pointer; }
+.intro__fondo { position: absolute; inset: 0; background: var(--negro); }
+.intro .emblema { position: absolute; left: 0; top: 0; height: auto; transform-origin: 0 0; will-change: transform; }
+.intro .emblema g[class^="e-"] { transform-box: fill-box; transform-origin: center; will-change: transform, opacity; }
+.intro-activa .barra .emblema { visibility: hidden; }
 
 /* ---------- llegada de la portada (asentada antes de 1,2 s) ---------- */
 .portada__logo, .portada__titulo, .portada__texto, .portada__cuerpo > .boton { animation: llega 700ms var(--ease-out) both; }
@@ -254,7 +253,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 @media (max-width: 820px) {
   :root { --barra: 56px; --hueco: 112px; }
   .barra { gap: 16px; }
-  .barra__marca img { width: 132px; }
+  .emblema { height: 34px; }
   .barra nav { display: none; }
   .barra__accion { margin-left: auto; }
 
@@ -267,8 +266,8 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
   .portada__titulo { font-size: clamp(2.25rem, 9vw, 3rem); margin-top: 32px; }
   .portada__cuerpo { padding: 36px 20px 24px; }
 
-  .shishas__marco, .galeria, .donde { grid-template-columns: 1fr; row-gap: 40px; }
-  .shishas__intro, .selector, .ficha, .shishas__foto, .galeria > *, .marco, .donde .titulo, .datos { grid-column: 1; grid-row: auto; }
+  .shishas__marco, .donde { grid-template-columns: 1fr; row-gap: 40px; }
+  .shishas__intro, .selector, .ficha, .shishas__foto, .donde .titulo, .datos { grid-column: 1; grid-row: auto; }
   .selector { grid-template-columns: 1fr; }
   .ficha { position: relative; top: 0; order: 3; }
   .shishas__foto { order: 4; }
@@ -284,7 +283,6 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
   .hoja { padding: 24px 20px; }
   .hoja__grupo ul { columns: 1; }
 
-  .marco { width: 78vw; justify-self: center; }
   .reservas { min-height: 86svh; }
   .reservas { grid-template-rows: auto auto 1fr auto; }
   .reservas__titulo { order: -1; align-self: start; font-size: 34vw; white-space: normal; line-height: 0.82; margin-bottom: 40px; }
