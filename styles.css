@@ -146,7 +146,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 @keyframes cambia { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 .shishas__foto { grid-column: 1 / 5; grid-row: 3; }
-.shishas__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 15%; filter: grayscale(1) contrast(1.05); }
+.shishas__foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
 .shishas__foto figcaption { font-size: var(--step-small); margin-top: 12px; color: var(--tabaco); }
 
 /* ---------- lectura: carta y la casa ---------- */
@@ -207,7 +207,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; letter-spacing: 
 /* ---------- pie ---------- */
 .pie { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; color: var(--marfil); }
 .pie .capitone--fino { position: relative; z-index: 2; }
-.pie__foto { position: absolute; inset: 8px 0 0; width: 100%; height: calc(100% - 8px); object-fit: cover; filter: brightness(0.42); }
+.pie__foto { position: absolute; inset: 8px 0 0; width: 100%; height: calc(100% - 8px); object-fit: cover; filter: brightness(0.3); }
 .pie__arriba, .pie__abajo { position: relative; z-index: 1; padding: 32px var(--m); }
 .pie__arriba { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .pie__arriba ul { display: grid; gap: 8px; }

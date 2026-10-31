@@ -58,6 +58,8 @@ def carta(secciones):
 
 
 def creditos(lista):
+    if not lista:
+        return ""
     partes = []
     for c in lista:
         lic = "dominio público" if c["licenseCode"] in ("pd", "cc0") else c["license"]
@@ -66,7 +68,7 @@ def creditos(lista):
             autor = "autor desconocido"
         titulo = c.get("titulo_es") or c["title"]
         partes.append(f'<a href="{escape(c["page"])}">{escape(titulo)}</a> ({escape(autor)}, {escape(lic)})')
-    return ", ".join(partes) + ", en Wikimedia Commons"
+    return " · Imágenes: " + ", ".join(partes) + ", en Wikimedia Commons"
 
 
 def poner(html, marca, contenido):

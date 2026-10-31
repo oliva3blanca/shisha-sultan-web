@@ -15,7 +15,7 @@ Web de **Shisha Sultán**, gastrobar y lounge de cachimbas en La Laguna (Tenerif
 | `contenido/` | Textos reales del local (la carta extraída del PDF). |
 
 | `index.html` · `styles.css` · `script.js` | La web. |
-| `assets/` | Imágenes de archivo con licencia libre; sus créditos, en `assets/credits.json` y en el pie de la web. |
+| `assets/` | `imagen.svg`, la imagen blanca provisional que ocupa el sitio de las fotos. Sustitúyela por fotos del local cambiando el `src` de cada `<img>` en `index.html`. |
 | `herramientas/generar_carta.py` | Escribe la carta, los sabores y los créditos dentro de `index.html`. |
 | `capturas/` | Capturas de la web en escritorio y móvil. |
 
